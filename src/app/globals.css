@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-main: #fafafa;
+  --remax-navy: #0a1128;
+  --remax-red-subtle: #d90429;
+  --glass-bg: rgba(255, 255, 255, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.4);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--remax-navy);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--remax-navy);
+  color: #fff;
+}
+
+/* Glassmorphism Utilities */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px 0 rgba(10, 17, 40, 0.05);
+}
+
+.glass-dark {
+  background: rgba(10, 17, 40, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Scrollbar hiding */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Glass input */
+.input-glass {
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(10, 17, 40, 0.1);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+.input-glass:focus {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: var(--remax-navy);
+  box-shadow: 0 0 0 4px rgba(10, 17, 40, 0.05);
+  outline: none;
+}
